@@ -46,17 +46,13 @@ public class Guerriero {
 		return valoreForza.getValoreForzaGuerriero();
 	}
 
-//	public void setValoreForza(Forza valoreForza) {
-//		this.valoreForza = valoreForza;
-//	}
+
 
 	public int getValoreAbilita() {
 		return valoreAbilita.getValoreAbilitaGuerriero();
 	}
 
-//	public void setValoreAbilita(Abilita valoreAbilita) {
-//		this.valoreAbilita = valoreAbilita;
-//	}
+
 
 	public Arma getArmaGuerriero() {
 		return armaGuerriero;
