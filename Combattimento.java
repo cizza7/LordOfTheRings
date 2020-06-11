@@ -9,6 +9,7 @@ public class Combattimento {
 	}
 
 
+	//decide who starts the attack and who is defending based on a "lucky" formula
 	public Guerriero chiInizia(Guerriero a, Guerriero b) {
 
 		double abiGuerrieroa = fortuna(a);
@@ -24,7 +25,7 @@ public class Combattimento {
 	}
 
 
-
+	//thats the "lucky" formula based on stats and a random int
 	public double fortuna(Guerriero g) {
 		Random ran = new Random();
 		double fortuna = (g.getValoreAbilita() * 1.25) + g.getValoreForza() + ran.nextInt(15);
@@ -32,7 +33,7 @@ public class Combattimento {
 	}
 
 
-	// Attacco è IL VINCITORE DELLA FUNZIONA CHI INIZIA
+	// attacco is the warriors who has won the chiInizia function.
 	public Guerriero combattimento(Guerriero attacco, Guerriero difesa) {
 		int dannoAttacco = attacco.getValoreForza();
 		int dannoAttaccoArma = attacco.getArmaGuerriero().getValoreAttacco();
@@ -46,7 +47,8 @@ public class Combattimento {
 		boolean attaccoVince = false;
 		boolean difesaVince = false;
 		while (!endFight) {
-
+			
+			//damage counting
 			int esitoScontro = dannoInflittoAttaccante + dannoSubitoDifensore;
 			if (esitoScontro >= 0) {
 				difesa.setPuntiVita(-esitoScontro);
@@ -62,6 +64,7 @@ public class Combattimento {
 				difesaVince = true;
 			}
 
+			//upgrading the weapon stats
 			attacco.getArmaGuerriero().setUsura(-5);
 			difesa.getArmaGuerriero().setUsura(-2);
 
