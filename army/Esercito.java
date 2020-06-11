@@ -5,26 +5,19 @@ import java.util.LinkedList;
 
 public abstract class Esercito {
 
-//	private int numeroGuerrieri;
+
 	private String nomeEsercito;
 	private LinkedList<Guerriero> esercitoGuerrieri;
 
-	// numero esercito indica solo quanti guerrieri dovrebbero esserci in un
+	
 	// esercito
 	public Esercito(String nomeEsercito) {
 
-		// this.numeroGuerrieri = numeroGuerrieri;
+		
 		this.nomeEsercito = nomeEsercito;
 		this.esercitoGuerrieri = new LinkedList<Guerriero>();
 	}
 
-//	public int getNumeroGuerrieri() {
-//		return numeroGuerrieri;
-//	}
-//
-//	public void setNumeroGuerrieri(int numeroGuerrieri) {
-//		this.numeroGuerrieri = numeroGuerrieri;
-//	}
 
 	public LinkedList<Guerriero> getEsercitoGuerrieri() {
 		return esercitoGuerrieri;
@@ -70,6 +63,7 @@ public abstract class Esercito {
 		return true;
 	}
 
+	//add warrior to the army
 	public void arruolaGuerriero(Guerriero g) {
 		try {
 			if (g != null)
@@ -80,6 +74,7 @@ public abstract class Esercito {
 
 	}
 
+	//takes out a warrior from the list, and gets it to te fight
 	public Guerriero lanciaGuerrieroInCombattimento() {
 		Guerriero lanciato;
 		if (esercitoGuerrieri.getFirst() == null) {
@@ -92,6 +87,7 @@ public abstract class Esercito {
 
 	}
 
+	//counting how many warriors are in a specific army
 	public int contaEsercito() {
 		Iterator<Guerriero> iter = esercitoGuerrieri.iterator();
 		int nCombattenti = 0;
